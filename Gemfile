@@ -11,9 +11,18 @@ gem 'rails', '~> 5.1.3'
 
 #Guilherme - Allow called from another domains
 gem 'rack-cors'
+#Guilherme - JWT
+gem 'devise'
+gem 'devise-jwt'
+gem 'rest-client'
+
 
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'sqlite3', '~> 1.3.6'
+
+#Guilherme - Para permitir mudar nome do controller e da model
+gem 'rails_refactor'
+
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
