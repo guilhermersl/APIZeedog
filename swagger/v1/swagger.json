@@ -1,0 +1,139 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "description": "API de busca de repositórios do GitHub desenvolvida para desafio da Zee Dog",
+    "version": "1.0.0",
+    "title": "API GitHub Zee Dog",
+    "contact": {
+      "email": "guilhermersl@yahoo.com.br"
+    }
+  },
+  "host": "localhost:3000",
+  "basePath": "/api/v1",
+   "schemes": [
+    "https",
+    "http"
+  ],
+  "paths": {
+    "/repositories": {
+      "get": {
+        "tags": [
+          "Repositórios Públicos"
+        ],
+        "summary": "Lista repositórios públicos do GitHub",
+        "description": "",
+        "operationId": "getPublicRepositories",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "since",
+            "in": "query",
+            "description": "Faz uma paginação a partir do id do último repositório visto",
+            "required": false,
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "successful operation"
+          },
+          "400": {
+            "description": "Invalid status value"
+          }
+        }
+      }
+    },
+    "/search/repos": {
+      "get": {
+        "tags": [
+          "Busca por Repositórios"
+        ],
+        "summary": "Busca repositório segundo parâmtros",
+        "description": "Nenhum dos parâmetros de busca é obrigatório. Assim, Em caso da não declaração de parâmetros, a busca será feita por todos os repositórios que sejam language=ruby",
+        "operationId": "index",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "description": "Filtrar por texto livre. (Ex.: q=zeedog)",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "language",
+            "in": "query",
+            "description": "Filtrar por linguagem de programação utilizada. (Ex.: language=ruby)",
+            "required": false,
+            "type": "string",
+            "default": "ruby"
+          },
+          {
+            "name": "user",
+            "in": "query",
+            "description": "Filtrar por proprietário do repositório. (Ex.: user=guilhermersl)",
+            "required": false,
+            "type": "string"
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "description": "Define paginação à lista de repositórios retornada. O padrão é 1. (Ex.: page=5)",
+            "required": false,
+            "type": "integer",
+            "default": "1"
+          },
+          {
+            "name": "per_page",
+            "in": "query",
+            "description": "Define o total de repositórios a ser retornado por página . (Ex.: page=5&per_page=50). O padrão é 100. ",
+            "required": false,
+            "type": "integer",
+            "default": "100"
+          },
+          {
+            "name": "sort",
+            "in": "query",
+            "description": "Permite ordenar o resultado pela quantidade de estrelas(stars), pela quantidade de forks(forks) ou pela última atualização(updated). (Ex.: sort=forks).",
+            "required": false,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "stars",
+                "forks",
+                "updated"
+              ]
+            }
+          },
+          {
+            "name": "order",
+            "in": "query",
+            "description": "Define a orientação da ordenação. Podendo ser ascendente ou descendente (Ex.: sort=forks&order=asc).",
+            "required": false,
+            "type": "array",
+            "items": {
+              "type": "string",
+              "enum": [
+                "asc",
+                "desc"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A User object"
+          },
+          "400": {
+            "description": "Invalid status value"
+          }
+        }
+      }
+    }
+  }
+}
