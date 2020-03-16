@@ -50,7 +50,7 @@
         "tags": [
           "Busca por Repositórios"
         ],
-        "summary": "Busca repositório segundo parâmtros",
+        "summary": "Faz busca por repositórios segundo parâmtros de busca, e permite ordenação e paginação desses repositórios.",
         "description": "Nenhum dos parâmetros de busca é obrigatório. Assim, Em caso da não declaração de parâmetros, a busca será feita por todos os repositórios que sejam language=ruby",
         "operationId": "index",
         "produces": [
