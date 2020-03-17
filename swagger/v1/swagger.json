@@ -8,7 +8,7 @@
       "email": "guilhermersl@yahoo.com.br"
     }
   },
-  "host": "localhost:3000",
+  "host": "apizeedog.herokuapp.com",
   "basePath": "/api/v1",
 
   "schemes": [
