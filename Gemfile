@@ -23,8 +23,9 @@ group :development, :test do
 end
 gem 'rswag'
 
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3', '~> 1.3.6'
+# Use Postgre as the database for Active Record
+#gem 'sqlite3', '~> 1.3.6'
+gem 'pg'
 
 #Guilherme - Para permitir mudar nome do controller e da model
 gem 'rails_refactor'
