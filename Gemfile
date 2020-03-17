@@ -21,11 +21,18 @@ gem 'rest-client'
 group :development, :test do
   gem 'rspec-rails', '~> 3.5'
 end
+
 gem 'rswag'
 
 # Use Postgre as the database for Active Record
 #gem 'sqlite3', '~> 1.3.6'
-gem 'pg'
+group :development do
+  gem 'sqlite3', '~> 1.3.6'
+end
+
+group :production do
+  gem 'pg'
+end
 
 #Guilherme - Para permitir mudar nome do controller e da model
 gem 'rails_refactor'
