@@ -12,8 +12,8 @@
   "basePath": "/api/v1",
 
   "schemes": [
-    "http",
-    "https"
+    "https",
+    "http"
   ],    
   "paths": {
     "/authenticate": {
