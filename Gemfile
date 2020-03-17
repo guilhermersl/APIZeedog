@@ -18,26 +18,26 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'simple_command'
 gem 'rest-client'
 
-group :development, :test do
+#group :development, :test do
   gem 'rspec-rails', '~> 3.5'
-end
+#end
 
 gem 'rswag'
 
 # Use Postgre as the database for Active Record
 #gem 'sqlite3', '~> 1.3.6'
-group :development, :test do
+#group :development, :test do
   gem 'sqlite3', '~> 1.3.6'
-end
+#end
 
-group :production do
+#group :production do
   gem 'pg'
-end
+#end
 
 #Guilherme - Para permitir mudar nome do controller e da model
-group :development, :test do
+#group :development, :test do
   gem 'rails_refactor'
-end
+#end
 
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
@@ -54,10 +54,10 @@ gem 'puma', '~> 3.7'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
 
-group :development, :test do
+#group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-end
+#end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
