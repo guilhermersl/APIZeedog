@@ -11,9 +11,11 @@ gem 'rails', '~> 5.1.3'
 
 #Guilherme - Allow called from another domains
 gem 'rack-cors'
+
 #Guilherme - JWT
-gem 'devise'
-gem 'devise-jwt'
+gem 'jwt'
+gem 'bcrypt', '~> 3.1.7'
+gem 'simple_command'
 gem 'rest-client'
 
 group :development, :test do

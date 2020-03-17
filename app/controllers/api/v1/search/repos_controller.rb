@@ -65,11 +65,5 @@ class Api::V1::Search::ReposController < Api::V1::ApiController
             end
                         
             return data
-        end        
-
-        def require_authorization!
-        unless current_user == @contact.user
-            render json: {}, status: :forbidden
-        end           
-    end        
+        end                       
 end

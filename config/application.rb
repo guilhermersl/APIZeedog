@@ -16,8 +16,12 @@ require "rails/test_unit/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
+
 module APIZeeDog
   class Application < Rails::Application
+    
+    config.autoload_paths << Rails.root.join('lib')
+
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 5.1
 
@@ -36,8 +40,7 @@ module APIZeeDog
         resource(
           '*',
           headers: :any,
-          methods: [:get]
-          #Guilherme - Somente GET
+          methods: [:get, :post, :put, :patch, :delete, :options, :head]
           )
       end
     end

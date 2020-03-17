@@ -13,12 +13,5 @@ class Api::V1::RepositoriesController < Api::V1::ApiController
 
         ret = RestClient.get "#{url}" + @since
         render json: ret.body
-    end
-    
-    def require_authorization!
-      unless current_user == @contact.user
-        render json: {}, status: :forbidden
-      end
-    end    
-        
+    end                
 end

@@ -10,18 +10,60 @@
   },
   "host": "localhost:3000",
   "basePath": "/api/v1",
-   "schemes": [
-    "https",
-    "http"
-  ],
+
+  "schemes": [
+    "http",
+    "https"
+  ],    
   "paths": {
+    "/authenticate": {
+      "post": {
+        "tags": [
+          "Autenticação"
+        ],
+        "summary": "Realiza autenticação como pré-requisito para todos os endpoints",
+        "description": "Para realizar qualquer requisição à API, é necessário estar autenticado. Para obter o token de autorização, basta, neste mesmo endpoint de Autenticação, informar email e password. Em seguida, copiar o resultado desta requisição (coluna auth_token), contendo o token gerado para o usuário informado. Feito isso, caso esteja utilizando o Swagger, basta clicar no botão Authorize, informar o token e solicitar a autorização; porém, se estiver fazendo o curl ou utilizando ferramentas de testes como o Postman, você deve solicitar a autorização, passando o token anteriormente copiado.",
+        "operationId": "getAuth",
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "in": "body",
+            "name": "body",
+            "description": "e-mail e senha para geração do token",
+            "required": true,
+            "schema": {
+              "type": "object",
+              "properties": {
+                "email": {
+                  "type": "string"
+                },
+                "password": {
+                  "type": "string"
+                }
+              },
+              "example": {
+                "email": "emailexemplo@email.com.br",
+                "password": 123456
+              }
+            }
+          }
+        ],
+        "responses": {
+          "405": {
+            "description": "Invalid input"
+          }
+        }        
+      }
+    },    
     "/repositories": {
       "get": {
         "tags": [
           "Repositórios Públicos"
         ],
         "summary": "Lista repositórios públicos do GitHub",
-        "description": "",
+        "description": "Observação: Este endpoint requer validação do token de autorização. Gere-o pelo endpoint /authenticate. Feito isso, caso esteja utilizando o Swagger, basta clicar no botão Authorize, informar o token e solicitar a autorização; porém, se estiver fazendo o curl ou utilizando ferramentas de testes como o Postman, você deve solicitar a autorização, passando o token anteriormente copiadoe em seguida informe-o no campo Authorization do Header desta requisição.",
         "operationId": "getPublicRepositories",
         "produces": [
           "application/json"
@@ -35,6 +77,11 @@
             "type": "integer"
           }
         ],
+        "security": [
+          {
+            "zeedog_ApiToken": []
+          }
+        ], 
         "responses": {
           "200": {
             "description": "successful operation"
@@ -51,7 +98,7 @@
           "Busca por Repositórios"
         ],
         "summary": "Faz busca por repositórios segundo parâmtros de busca, e permite ordenação e paginação desses repositórios.",
-        "description": "Nenhum dos parâmetros de busca é obrigatório. Assim, Em caso da não declaração de parâmetros, a busca será feita por todos os repositórios que sejam language=ruby",
+        "description": "Nenhum dos parâmetros de busca é obrigatório. Assim, Em caso da não declaração de parâmetros, a busca será feita por todos os repositórios que sejam language=ruby.   Observação: Este endpoint requer validação do token de autorização. Gere-o pelo endpoint /authenticate. Feito isso, caso esteja utilizando o Swagger, basta clicar no botão Authorize, informar o token e solicitar a autorização; porém, se estiver fazendo o curl ou utilizando ferramentas de testes como o Postman, você deve solicitar a autorização, passando o token anteriormente copiado.",
         "operationId": "index",
         "produces": [
           "application/json"
@@ -125,6 +172,11 @@
             }
           }
         ],
+        "security": [
+          {
+            "zeedog_ApiToken": []
+          }
+        ],        
         "responses": {
           "200": {
             "description": "A User object"
@@ -135,5 +187,13 @@
         }
       }
     }
-  }
+  },
+  "securityDefinitions": {    
+    "zeedog_ApiToken": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "description": "Autenticação baseada em Json Web Token (JWT)",
+      "in": "header"
+    }
+  }  
 }
