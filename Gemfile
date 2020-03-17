@@ -26,7 +26,7 @@ gem 'rswag'
 
 # Use Postgre as the database for Active Record
 #gem 'sqlite3', '~> 1.3.6'
-group :development do
+group :development, :test do
   gem 'sqlite3', '~> 1.3.6'
 end
 
@@ -35,7 +35,9 @@ group :production do
 end
 
 #Guilherme - Para permitir mudar nome do controller e da model
-gem 'rails_refactor'
+group :development, :test do
+  gem 'rails_refactor'
+end
 
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
