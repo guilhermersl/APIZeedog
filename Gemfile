@@ -27,7 +27,7 @@ gem 'rswag'
 # Use Postgre as the database for Active Record
 #gem 'sqlite3', '~> 1.3.6'
 #group :development, :test do
-  gem 'sqlite3', '~> 1.3.6'
+  #gem 'sqlite3', '~> 1.3.6'
 #end
 
 #group :production do
