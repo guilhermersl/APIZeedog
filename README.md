@@ -31,6 +31,7 @@ Realiza autenticação como pré-requisito para todos os endpoints.
     4º - Caso esteja usando o Swagger, clique em Authorize e informe o "auth_token" copiado. Caso esteja executando via Postman ou efetuando um curl, basta colar o "auth_token" no campo Authorization do header das requisições desejadas.
 
 
+
 **[GET] /repositories**  
 
 Lista repositórios públicos do GitHub.
@@ -39,9 +40,15 @@ Lista repositórios públicos do GitHub.
 
 *Filtros (opcionais):*
 
-**since** *(query parameter)*    
-    id do repositório inicial a ser buscado. Por exemplo, ?since=50 representa que serão listados todos os repositórios públicos a partir do repositório de id 50.
-    Ex.: apizeedog.herokuapp.com/api/v1/repositories?since=20
+    since (query parameter)
+    
+        id do repositório inicial a ser buscado. 
+        
+        Por exemplo, ?since=50 representa listagem todos os repositórios públicos a partir do repositório de id 50.
+
+        Ex.: apizeedog.herokuapp.com/api/v1/repositories?since=20
+
+
 
 **Busca por Repositórios**  
     **[GET] /search/repos =>**      Faz busca por repositórios segundo parâmtros de busca, e permite ordenação e paginação desses repositórios.
