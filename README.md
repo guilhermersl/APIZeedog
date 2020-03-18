@@ -57,51 +57,51 @@ Faz busca por repositórios segundo parâmtros de busca, e permite ordenação e
         
 *Requer autenticação:* Procedimento descrito no endpoint de Autenticação.
     
-*Filtros (opcionais):*
+*Filtros opcionais (query parameter):*
 
-    q (query parameter)
+    q
     
         filtrar por texto livre
 
         Ex.: apizeedog.herokuapp.com/api/v1/search/repos?q=zeedog
 
 
-    language (query parameter)
+    language
     
         Filtrar por linguagem de programação utilizada. Valor default é ruby.
         
         Ex.: apizeedog.herokuapp.com/api/v1/search/repos?language=ruby
 
 
-    user (query parameter)
+    user
     
         Filtrar por proprietário do repositório
 
         Ex.: apizeedog.herokuapp.com/api/v1/search/repos?user=guilhermersl
 
 
-    page (query parameter)
+    page
     
         Define paginação à lista de repositórios retornada. Valor default é 1.
         
         Ex.: apizeedog.herokuapp.com/api/v1/search/repos?page=5&per_page=100
         
         
-    per_page (query parameter)
+    per_page
     
         Define o total de repositórios a ser retornado por página. Informe-o junto com o parâmetro "page". Valor default é 100.
         
         Ex.: apizeedog.herokuapp.com/api/v1/search/repos?page=5&per_page=100
 
 
-    sort (query parameter)
+    sort
     
         Permite ordenar o resultado pela quantidade de estrelas(stars), pela quantidade de forks(forks) ou pela última atualização(updated).
                                                                
         Ex.: apizeedog.herokuapp.com/api/v1/search/repos?sort=forks 
 
 
-    order (query parameter)
+    order
     
         Define a orientação da ordenação. Podendo ser ascendente(asc) ou descendente(desc).
         
@@ -109,7 +109,7 @@ Faz busca por repositórios segundo parâmtros de busca, e permite ordenação e
 
     
     
-    *Obs.: os parâmetros são opcionais e acumulativos. Asism, seria possível definir, por exemplo: apizeedog.herokuapp.com/api/v1/search/repos?language=ruby&sort=forks&order=asc
+    Obs.: os parâmetros são opcionais e acumulativos. Asism, seria possível definir, por exemplo: apizeedog.herokuapp.com/api/v1/search/repos?language=ruby&sort=forks&order=asc
 
                                                                     
 
@@ -133,4 +133,3 @@ Para documentar e permitir testes, foi gerada a documentação com o Swagger.
 ## Heroku
 
 https://apizeedog.herokuapp.com/api-docs/index.html
-
