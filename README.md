@@ -43,9 +43,9 @@ Lista repositórios públicos do GitHub.
 
     since
 
-        ID do último repositório visto. Serve como ponto de partida para a listagem
+        ID do último repositório visto. Serve como ponto de partida para a listagem.
         
-        Por exemplo, ?since=50 representa listagem todos os repositórios públicos a partir do repositório de id 50.
+        Por exemplo, ?since=50 representa listagem de todos os repositórios públicos a partir do repositório de id 50.
 
         Ex.: apizeedog.herokuapp.com/api/v1/repositories?since=20
 
@@ -62,7 +62,7 @@ Faz busca por repositórios segundo parâmtros de busca, e permite ordenação e
 
     q
     
-        filtrar por texto livre
+        Filtrar por texto livre.
 
         Ex.: apizeedog.herokuapp.com/api/v1/search/repos?q=zeedog
 
@@ -104,19 +104,19 @@ Faz busca por repositórios segundo parâmtros de busca, e permite ordenação e
 
     order
     
-        Define a orientação da ordenação. Podendo ser ascendente(asc) ou descendente(desc).
+        Define a orientação da ordenação, podendo ser ascendente(asc) ou descendente(desc).
         
         Ex.: apizeedog.herokuapp.com/api/v1/search/repos?sort=forks&order=asc
 
     
     
-    Obs.: os parâmetros são opcionais e acumulativos. Asism, seria possível definir, por exemplo: apizeedog.herokuapp.com/api/v1/search/repos?language=ruby&sort=forks&order=asc
+    Obs.: os parâmetros são opcionais e acumulativos. Asism, será possível definir, por exemplo: apizeedog.herokuapp.com/api/v1/search/repos?language=ruby&sort=forks&order=asc
 
                                                                     
 
 ## Ferramentas utilizadas
 
-A aplicação foi desenvolvida usando a linguagem Ruby on Rails e PostgreSQL. 
+A aplicação foi desenvolvida usando a linguagem Ruby on Rails e banco de dados PostgreSQL. 
 
 Para realizar testes, foi utilizado o Postman
 
