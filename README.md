@@ -10,19 +10,21 @@ Esta aplicação realiza consulta aos repositórios do GitHub, por meio de endpo
 *   É possível acessar a documentação da API, com endpoints, autenticação, parâmetros de buscas, entre outras informações, em: https://apizeedog.herokuapp.com/api-docs/index.html
 
 
-## EndPoints:
-Base URL: **apizeedog.herokuapp.com/api/v1**
+## EndPoints:   ---  Base URL: apizeedog.herokuapp.com/api/v1
 
 **Autenticação  -  [POST] /authenticate**
-Realiza autenticação como pré-requisito para todos os endpoints.
-        
-1º - Informe email e password no body da requisição. Ex.: {"email":"email@mail.com","password":"123456"}
 
-2º - Efetue a requisição.
+    Realiza autenticação como pré-requisito para todos os endpoints.
 
-3º - Copie o "auth_token" gerado.
+    **Procedimentos:**
+    
+    1º - Informe email e password no body da requisição. Ex.: {"email":"email@mail.com","password":"123456"}
 
-4º - Caso esteja usando o Swagger, clique em Authorize e informe o "auth_token" copiado. Caso esteja executando via Postman ou efetuando um curl, basta colar o "auth_token" no campo Authorization do header das requisições desejadas.
+    2º - Efetue a requisição.
+
+    3º - Copie o "auth_token" gerado.
+
+    4º - Caso esteja usando o Swagger, clique em Authorize e informe o "auth_token" copiado. Caso esteja executando via Postman ou efetuando um curl, basta colar o "auth_token" no campo Authorization do header das requisições desejadas.
 
 **Repositórios Públicos**      
     **[GET] /repositories    =>**  Lista repositórios públicos do GitHub.
