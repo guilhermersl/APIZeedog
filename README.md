@@ -1,6 +1,6 @@
 # API GitHub Zee Dog
 
-Aplicação de busca de repositórios do GitHub.
+API de busca de repositórios do GitHub.
 Esta aplicação realiza consulta aos repositórios do GitHub, por meio de endpoints específicos.
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://apizeedog.herokuapp.com/api-docs/index.html)
@@ -39,9 +39,9 @@ Lista repositórios públicos do GitHub.
 
 *Requer autenticação:* Procedimento descrito no endpoint de Autenticação.
 
-*Filtros (opcionais):*
+*Filtros opcionais (query parameters):*
 
-    since (query parameter)
+    since
 
         id do repositório inicial a ser buscado. 
         
