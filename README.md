@@ -107,29 +107,30 @@ Faz busca por repositórios segundo parâmtros de busca, e permite ordenação e
         
         Ex.: apizeedog.herokuapp.com/api/v1/search/repos?sort=forks&order=asc
 
-
-**Obs.: os parâmetros são opcionais e acumulativos. Asism, seria possível definir, por exemplo: apizeedog.herokuapp.com/api/v1/search/repos?language=ruby&sort=forks&order=asc**
+    
+    
+    *Obs.: os parâmetros são opcionais e acumulativos. Asism, seria possível definir, por exemplo: apizeedog.herokuapp.com/api/v1/search/repos?language=ruby&sort=forks&order=asc
 
                                                                     
 
-## Ruby on Rails
+## Ferramentas utilizadas
 
-A aplicação foi desenvolvida usando a linguagem Ruby no Rails.
+A aplicação foi desenvolvida usando a linguagem Ruby on Rails e PostgreSQL. 
 
+Para realizar testes, foi utilizado o Postman
 
-## PostgreSQL
+Para documentar e permitir testes, foi gerada a documentação com o Swagger.
 
-A aplicação foi desenvolvida usando o Banco de dados PostgreSQL.
 
 
 ## Instalação
 
 1. Baixe o conteúdo do repositório 'apizeedog' do GitHub (https://github.com/guilhermersl/APIZeedog.git)
 2. Descompacte o arquivo baixado, localize-o no local acessível pela Web. Suponha que a localização seja c:/sites/, por exemplo.
-3. 
+
 
 
 ## Heroku
 
-URL = https://apizeedog.herokuapp.com/api-docs/index.html
+https://apizeedog.herokuapp.com/api-docs/index.html
 
