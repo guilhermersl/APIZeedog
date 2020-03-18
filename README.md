@@ -43,7 +43,7 @@ Lista repositórios públicos do GitHub.
 
     since
 
-        id do repositório inicial a ser buscado. 
+        ID do último repositório visto. Serve como ponto de partida para a listagem
         
         Por exemplo, ?since=50 representa listagem todos os repositórios públicos a partir do repositório de id 50.
 
@@ -58,7 +58,7 @@ Faz busca por repositórios segundo parâmtros de busca, e permite ordenação e
         
 *Requer autenticação:* Procedimento descrito no endpoint de Autenticação.
     
-*Filtros opcionais (query parameter):*
+*Filtros opcionais (query parameters):*
 
     q
     
