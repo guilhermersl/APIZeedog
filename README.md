@@ -12,7 +12,8 @@ Esta aplicação realiza consulta aos repositórios do GitHub, por meio de endpo
 
 
 
-## EndPoints:   ---  Base URL: apizeedog.herokuapp.com/api/v1
+## EndPoints:
+*Base URL: apizeedog.herokuapp.com/api/v1*
 
 
 **[POST] /authenticate**
@@ -26,14 +27,21 @@ Realiza autenticação como pré-requisito para todos os endpoints.
     2º - Efetue a requisição.
 
     3º - Copie o "auth_token" gerado.
-    
+
     4º - Caso esteja usando o Swagger, clique em Authorize e informe o "auth_token" copiado. Caso esteja executando via Postman ou efetuando um curl, basta colar o "auth_token" no campo Authorization do header das requisições desejadas.
 
-**Repositórios Públicos**      
-    **[GET] /repositories    =>**  Lista repositórios públicos do GitHub.
-        ** Requer autenticação:     Procedimento descrito no endpoint de Autenticação.
-        ** Filtros (opcionais):     "since" (query parameter) =>    id do repositório inicial a ser buscado. Por exemplo, ?since=50 representa que serão listados todos os repositórios públicos a partir do repositório de id 50.
-                                                                    Ex.: apizeedog.herokuapp.com/api/v1/repositories?since=20
+
+**[GET] /repositories**  
+
+Lista repositórios públicos do GitHub.
+
+*Requer autenticação:* Procedimento descrito no endpoint de Autenticação.
+
+*Filtros (opcionais):*
+
+**since** *(query parameter)*    
+    id do repositório inicial a ser buscado. Por exemplo, ?since=50 representa que serão listados todos os repositórios públicos a partir do repositório de id 50.
+    Ex.: apizeedog.herokuapp.com/api/v1/repositories?since=20
 
 **Busca por Repositórios**  
     **[GET] /search/repos =>**      Faz busca por repositórios segundo parâmtros de busca, e permite ordenação e paginação desses repositórios.
